@@ -1,0 +1,17 @@
+{
+  "name": "portal_noticias",
+  "version": "1.0.0",
+  "description": "Site de Noticias",
+  "main": "noticias.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Michel H.",
+  "license": "ISC",
+  "dependencies": {
+    "-": "0.0.1",
+    "ejs": "^2.7.4",
+    "express": "^4.17.1",
+    "save": "^2.4.0"
+  }
+}
