@@ -1,23 +1,18 @@
-var express = require('express'); //Contem a referencia da função express
+var app = require('./config/server');
 
-var app = express(); // executa a função.
+var rotaHome = require('./app/routes/home')
+rotaHome(app)
 
-//app.set('views', './views');
-app.set('view engine', 'ejs'); //Muda o renderizador de views
+var rotaNoticias = require('./app/routes/noticias')
+rotaNoticias(app)
 
-app.get('/', (req, res) => {
-    res.render('home/index')
-});
+var rotaAddNoticias = require('./app/routes/formulario_inclusao_noticia')
+rotaAddNoticias(app)
 
-app.get('/formulario_inclusao_noticia', (req, res) => {
-    res.render('admin/form_add_noticia')
-});
 
-app.get('/noticias', (req, res) => {
-    res.render('noticias/noticias')
-});
 
-app.listen(3001, () => {
+
+app.listen(3000, () => {
     console.log('Servidor rodando com express...')
     console.log('Sendo reiniciado automaticamente com nodemon...')
 });
